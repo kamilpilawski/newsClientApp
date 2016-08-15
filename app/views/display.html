@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <article class="post" style="overflow: hidden">
+    <div class="post-preview col-xs-10 no-gutter">
+      <h2>{{news.title}}</h2>
+      <p>{{news.text}}</p>
+      <p class="meta">
+        {{news.author}}--{{news.data}}
+      </p>
+    </div>
+  </article>
+</div>
+
+
+<!-- Comments Form -->
+<div ng-controller="CommentController">
+<div class="well">
+  <h4>Zostaw komenarz:</h4>
+  <form role="form" ng-submit="createComm(newComment)">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="newComment.author" placeholder="Autor">
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" ng-model="newComment.comment" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Wyślij</button>
+  </form>
+</div>
+
+<hr>
+
+
+  <div ng-repeat="comm in comments">
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">{{comm.author}}
+          <small>{{comm.date}}</small>
+        </h4>
+        {{comm.comment}}
+      </div>
+    </div>
+  </div>
+</div>
