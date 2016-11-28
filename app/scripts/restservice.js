@@ -88,7 +88,7 @@ angular.module('RESTService', [])
       };
       $scope.getComments();
     })
-  .constant('ENDPOINT_URI', 'http://192.168.0.3:8080/api/news/')
+  .constant('ENDPOINT_URI', 'http://89.79.254.237:9001/api/news/')
   .service('NewsModel', function ($http, ENDPOINT_URI) {
     var service = this;
 
